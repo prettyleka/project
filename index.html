@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://kit.fontawesome.com/dbfd4d875c.js" crossorigin="anonymous"></script>
     <title>Search Your Pet AID</title>
 </head>
 
@@ -24,11 +25,11 @@
                     <img src="img/fpindCat.png" class="img-fluid" />
                 </div>
                 <div class="col">
-                    <h1>Find your pet</h1>
-                    <h2>One solution for many problems</h2>
+                    <h1 class="text-left">Find your pet</h1>
+                    <h2 class="text-center font-size: medium">One solution for many problems</h2>
                     <div class="row">
-                        <button class="mx-auto col-sm-4 btn-outline-success">Log In</button>
-                        <button class="mx-auto col-sm-4">Sign Up</button>
+                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success grid">Log In</button>
+                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success">Sign Up</button>
                     </div>
                 </div>
                 <div class="col col-sm-2 col-md-2 align-self-center">
@@ -40,8 +41,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#mainMenu"
-                aria-controls="#mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainMenu">
@@ -58,6 +58,48 @@
             </div>
         </div>
     </nav>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Lost your cat?
+                        <i class="fa-solid fa-cat fa-2xl"></i>
+                    </h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-success">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Lost your dog?
+                        <i class="fa-solid fa-dog fa-2xl"></i>
+                    </h5>       
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-success">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Lost another animal?
+                        <i class="fa-solid fa-paw fa-2xl"></i>
+                    </h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-success">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+      
+    </div>
+
+
 </body>
 
 <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->

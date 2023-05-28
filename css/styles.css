@@ -1,6 +1,7 @@
 body{
     font-family: "Open Sans", sans-serif;
     padding: auto;
+    background-image:linear-gradient(to right, #edf3e8, #dff7b2, #dae9b2);
  }
 
  h1,h2,h3 {
@@ -8,24 +9,43 @@ body{
     margin-left: 20%;
     font-weight: 400;
     font-family: "Lobster", cursive;
-    display:grid;
+    display: grid;
  }
- h2 {
-    color: #3046C5;
- }
- header h2 {
-    text-align: auto;
-    color: #af4407;
-}
+
 
  header btn{
     align-self: center;
-
 }
+
+.carousel-item{
+    -moz-background-inline-policy: continuous;
+    display:contents, inline;
+    width: 20%;
+    height: 20%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 35%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;    
+  }
+
+  .carouse2l-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    display: flex;
+    width: 10%;
+    text-align: center;
+  }
+
     
 .jumbotron {
     margin: 0;
     padding: 30px;
+    display: grid;
     background-image: linear-gradient(to right, #e7e425, #b4943c, #eeb71f);
     color: white;
 }
@@ -40,6 +60,6 @@ body{
 }
 
 .navbar {
-    background-color: #901CAD;
+    background-color: #d17206;
 }
  
