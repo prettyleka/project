@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/dbfd4d875c.js" crossorigin="anonymous"></script>
+    <script>src = "node_modules/jquery/dist/jquery.min.js"</script>
     <title>Search Your Pet AID</title>
 </head>
 
@@ -26,10 +27,12 @@
                 </div>
                 <div class="col">
                     <h1 class="text-left">Find your pet</h1>
-                    <h2 class="text-center font-size: medium">One solution for many problems</h2>
+                    <h2 class="text-white font-weight-normal home-5-title mb-0">One solution for many problems</h2>
                     <div class="row">
-                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success grid">Log In</button>
-                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success">Sign Up</button>
+                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success grid" data-toggle="modal"
+                            data-target="#loginModal">Log In</button>
+                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success" data-toggle="modal"
+                            data-target="#signupModal">Sign Up</button>
                     </div>
                 </div>
                 <div class="col col-sm-2 col-md-2 align-self-center">
@@ -38,6 +41,123 @@
             </div>
         </div>
     </header>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail"
+                                        placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword"
+                                        placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                    data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            </div>
+                            <div class="border-top card-body text-center">Doesn't have an account? <a class="close"
+                                    type="button" data-target="#signupModal" data-toggle="modal"
+                                    data-dismiss="modal">Sign Up!</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="signupModal" class="justify-content-center modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h3 class="modal-title text-center">Sign up</h3>
+                    <a class="close" type="button" data-target="#loginModal" data-toggle="modal"
+                        data-dismiss="modal">Log In!</a>
+                </header>
+                <article class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>First name </label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="col form-group">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="">
+                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="option1">
+                                <span class="form-check-label"> Male </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="option2">
+                                <span class="form-check-label"> Female</span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="option2">
+                                <span class="form-check-label"> Other</span>
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>City</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Country</label>
+                                <select id="inputState" class="form-control">
+                                    <option> Choose...</option>
+                                    <option>Israel</option>
+                                    <option>Russia</option>
+                                    <option>Ukraine</option>
+                                    <option selected="">United States</option>
+                                    <option>India</option>
+                                    <option>Canada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Create password</label>
+                            <input class="form-control" type="password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Register </button>
+                        </div>
+                        <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br>
+                            Terms of use and Privacy Policy.</small>
+                    </form>
+                </article>
+                <div class="border-top card-body text-center">Have an account? <a class="close"
+                        data-target="#loginModal" data-toggle="modal" data-dismiss="modal">Log In</a></div>
+            </div>
+        </div>
+
+    </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
@@ -58,45 +178,128 @@
             </div>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Lost your cat?
-                        <i class="fa-solid fa-cat fa-2xl"></i>
-                    </h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
+
+
+    <div class="container_new">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated"
+                data-wow-duration="300ms"
+                style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
+                <i class="fa fa-dog medium-icon"></i>
+                <span id="anim-number-pizza" class="counter-number"></span>
+                <span class="timer counter alt-font appear" data-to="980" data-speed="7000">2800</span>
+                <p class="counter-title">Lost Animals registered on the site</p>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Lost your dog?
-                        <i class="fa-solid fa-dog fa-2xl"></i>
-                    </h5>       
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
+            <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated"
+                data-wow-duration="600ms"
+                style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
+                <i class="fa fa-heart medium-icon"></i>
+                <span class="timer counter alt-font appear" data-to="980" data-speed="7000">980</span>
+                <span class="counter-title">Happy Animals found their owners</span>
+            </div>
+            <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten animated"
+                data-wow-duration="900ms"
+                style="visibility: visible; animation-duration: 900ms; animation-name: fadeInUp;">
+                <i class="fa fa-person medium-icon"></i>
+                <span class="timer counter alt-font appear" data-to="810" data-speed="7000">810</span>
+                <span class="counter-title">Registered volunteers ready to help</span>
+            </div>
+            <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated" data-wow-duration="1200ms"
+                style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
+                <i class="fa fa-home medium-icon"></i>
+                <span class="timer counter alt-font appear" data-to="600" data-speed="7000">600</span>
+                <span class="counter-title">Animals waiting for new home</span>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Lost another animal?
-                        <i class="fa-solid fa-paw fa-2xl"></i>
-                    </h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="img/pexels-ave-calvar-martinez-3010183.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Lost your pet?</a>
+                        </h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                            dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="img/pexels-sakina-mammadli-15043733.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Find an animal and looking for the owners?</a>
+                        </h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+                            euismod
+                            odio, gravida pellentesque urna varius vitae.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="img/pexels-zeynep-sude-emek-15953064.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Want to volunteer?</a>
+                        </h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam,
+                            error
+                            quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque
+                            iure
+                            perspiciatis mollitia recusandae vero vel quam!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="img/pexels-mikhail-nilov-7663139.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Looking for help?</a>
+                        </h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+                            euismod
+                            odio, gravida pellentesque urna varius vitae.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="img/pexels-sevenstorm-juhaszimrus-704767.jpg" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Useful information</a>
+                        </h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+                            euismod
+                            odio, gravida pellentesque urna varius vitae.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Project Six</a>
+                        </h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum
+                            nostrum
+                            suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in
+                            voluptates,
+                            nemo repellat fugiat excepturi! Nemo, esse.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
-      
+        <!-- /.row -->
     </div>
 
 
@@ -106,8 +309,15 @@
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
 
 </html>
 
 
+<!-- Photo by SevenStorm JUHASZIMRUS: https://www.pexels.com/photo/123-let-s-go-imaginary-text-704767/ -->
+<!-- Photo by Mikhail Nilov: https://www.pexels.com/photo/help-me-sign-with-button-on-wall-7663139/ -->
+<!-- Photo by Zeynep Sude  Emek: https://www.pexels.com/photo/horse-eating-hay-15953064/ -->
+<!-- Photo by Sakina  Mammadli : https://www.pexels.com/photo/ginger-cat-in-garden-15043733/ -->
+<!-- Photo by Ave Calvar Martinez: https://www.pexels.com/photo/brown-dog-curious-about-something-3010183/ -->
 <!-- <a href="https://www.freepik.com/free-vector/editable-poster-template-vector-lost-found-with-cute-animal-illustration_16352155.htm#query=found%20cat%20poster&position=1&from_view=search&track=ais">Image by rawpixel.com</a> on Freepik -->
