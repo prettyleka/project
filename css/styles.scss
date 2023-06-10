@@ -1,0 +1,95 @@
+$jumbotron-background-image: linear-gradient(to right, #e7e425, #b4943c, #eeb71f);
+$body-font: "Open Sans", sans-serif;
+$body-background-image-green: #edf3e8;
+$body-background-image-green1: #dff7b2;
+$body-background-image-yellow: #dae9b2;
+$header-font: "Lobster", cursive;
+
+$site-footer-background-image-blue: #CEC8FF;
+$white: white;
+$navbar-background-color: #d17206;
+
+
+
+body{
+    font-family: $body-font;
+    padding: auto;
+    background-image: linear-gradient(to right, $body-background-image-green, $body-background-image-green1, $body-background-image-yellow);
+ }
+
+ h1,h2,h3 {
+    text-align: auto;
+    margin-left: 20%;
+    font-weight: 400;
+    font-family: $header-font;
+    display: grid;
+ }
+
+
+ header btn{
+    align-self: center;
+}
+
+.carousel-item{
+    -moz-background-inline-policy: continuous;
+    display:contents, inline;
+    width: 20%;
+    height: 20%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 35%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;    
+  }
+
+  .carouse2l-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    display: flex;
+    width: 10%;
+    text-align: center;
+  }
+
+    
+.jumbotron {
+    margin: 0;
+    padding: 30px;
+    display: grid;
+    background-image: $jumbotron-background-image;
+    color: $white;
+}
+    
+ .site-footer {
+    background-image: linear-gradient($site-footer-background-image-blue, $white);
+    padding: 20px 0;
+}
+  
+.row-content {
+    border-bottom: 1px ridge;
+}
+
+.navbar {
+    background-color: $navbar-background-color;
+}
+ 
+counter-section i { display:block; margin:0 0 10px}
+.counter-section span.counter { font-size:40px; color:#000; line-height:60px; display:block; font-family: "Oswald",sans-serif; letter-spacing: 2px}
+.counter-title{ font-size:12px; letter-spacing:2px; text-transform: uppercase}
+.counter-icon {top:25px; position:relative}
+.counter-style2 .counter-title {letter-spacing: 0.55px; float: left;}
+.counter-style2 span.counter {letter-spacing: 0.55px; float: left; margin-right: 10px;}
+.counter-style2 i {float: right; line-height: 26px; margin: 0 10px 0 0}
+.counter-subheadline span {float: right;}  
+
+.medium-icon {
+    font-size: 40px !important;
+    margin-bottom: 15px !important;
+} 
+
+.container_new{
+    margin-top:50px;
+}
