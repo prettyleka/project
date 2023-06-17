@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- build:css css/main.css -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Additional CSS must be placed after Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
+
+    <script src="https://kit.fontawesome.com/dbfd4d875c.js" crossorigin="anonymous"></script>
+    <script>src = "node_modules/jquery/dist/jquery.min.js"</script>
+    <title>Search Your Pet AID</title>
+</head>
+
+<body>
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row row-content">
+                <div class="col col-sm-2 col-md-2 align-self-center">
+                    <img src="img/fpindCat.png" class="img-fluid" />
+                </div>
+                <div class="col">
+                    <h1 class="text-left">Find your pet</h1>
+                    <h2 class="text-white font-weight-normal home-5-title mb-0">One solution for many problems</h2>
+                    <div class="row">
+                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success grid" id="loginButton">Log In</button>
+                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success" id="signupButton">Sign Up</button>
+                    </div>
+                </div>
+                <div class="col col-sm-2 col-md-2 align-self-center">
+                    <img src="img/lostDog.png" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">
+                        <i class="fa fa-home fa-lg"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lost.html"><i class="fa fa-question-circle fa-lg"></i>Lost</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="found.html"><i class="fa fa-exclamation-circle fa-lg"></i>
+                            Found</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-address-card fa-lg"></i>
+                            Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="bg-white rounded d-flex align-items-center justify-content-between" id="header"> 
+            <button class="btn btn-hide text-uppercase" type="button" data-toggle="collapse" data-target="#filterbar"
+                aria-expanded="false" aria-controls="filterbar" id="filter-btn" onclick="changeBtnTxt()"> 
+                <span class="fas fa-angle-left" id="filter-angle"></span>
+                <span id="btn-txt">Hide filters</span>
+            </button>
+            <nav class="navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto">
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav" aria-controls="mynav" aria-expanded="false" aria-label="Toggle navigation" onclick="chnageIcon()" id="icon">
+                    <span class="navbar-toggler-icon"></span> 
+                </button>
+                <div class="collapse navbar-collapse" id="mynav">
+                    <ul class="navbar-nav d-lg-flex align-items-lg-center">
+                        <li class="nav-item active"> 
+                            <select name="sort" id="sort">
+                                <option value="" hidden selected>Sort by</option>
+                                <option value="cats">Cats</option>
+                                <option value="dogs">Dogs</option>
+                                <option value="other">Other</option>
+                            </select> </li>
+                        <li class="nav-item d-inline-flex align-items-center justify-content-between mb-lg-0 mb-3">
+                            <div class="d-inline-flex align-items-center mx-lg-2" id="select2">
+                                <div class="pl-2">Show per page:</div> <select name="pro" id="pro">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="font-weight-bold mx-2 result">10 from 200</div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="ml-auto mt-3 mr-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true" class="font-weight-bold">&lt;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">..</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">24</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                             <span aria-hidden="true" class="font-weight-bold">&gt;</span> 
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="table-wrap">
+            <table class="table">
+                <thread class="thread-primary">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img class="img-fluid" src="img/pexels-sakina-mammadli-15043733.jpg"></img>
+                        </td>
+                        <td>
+                            <div>
+                                <h4>Cat, found in 12.06.2023, Holon</h4>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                                    aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                                    dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-success" id="contat">
+                                <i class="fa fa-phone fa-lg align-self-center"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="img-fluid" src="img/pexels-ave-calvar-martinez-3010183.jpg"></img>
+                        </td>
+                        <td>
+                            <div>
+                                <h4>Dog, found in 11.03.2023, Ramat-Gan</h4>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                                    aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                                    dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-success" id="contat">
+                                <i class="fa fa-phone fa-lg align-self-center"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="img-fluid" src="img/pexels-sakina-mammadli-15043733.jpg"></img>
+                        </td>
+                        <td>
+                            <div>
+                                <h4>Cat, found in 12.06.2023, Holon</h4>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                                    aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                                    dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-success" id="contat">
+                                <i class="fa fa-phone fa-lg align-self-center"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="img-fluid" src="img/pexels-ave-calvar-martinez-3010183.jpg"></img>
+                        </td>
+                        <td>
+                            <div>
+                                <h4>Dog, found in 11.03.2023, Ramat-Gan</h4>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                                    aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                                    dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-success" id="contat">
+                                <i class="fa fa-phone fa-lg align-self-center"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="img-fluid" src="img/pexels-sakina-mammadli-15043733.jpg"></img>
+                        </td>
+                        <td>
+                            <div>
+                                <h4>Cat, found in 12.06.2023, Holon</h4>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                                    aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                                    dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-success" id="contat">
+                                <i class="fa fa-phone fa-lg align-self-center"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="img-fluid" src="img/pexels-ave-calvar-martinez-3010183.jpg"></img>
+                        </td>
+                        <td>
+                            <div>
+                                <h4>Dog, found in 11.03.2023, Ramat-Gan</h4>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                                    aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt,
+                                    dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-success" id="contat">
+                                <i class="fa fa-phone fa-lg align-self-center"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="signupModal" class="justify-content-center modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h3 class="modal-title text-center">Sign up</h3>
+                    <a class="close" type="button" data-target="#loginModal" data-toggle="modal"
+                        data-dismiss="modal">Log In!</a>
+                </header>
+                <article class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>First name </label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="col form-group">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" placeholder=" ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="">
+                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="option1">
+                                <span class="form-check-label"> Male </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="option2">
+                                <span class="form-check-label"> Female</span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="option2">
+                                <span class="form-check-label"> Other</span>
+                            </label>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>City</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Country</label>
+                                <select id="inputState" class="form-control">
+                                    <option> Choose...</option>
+                                    <option>Israel</option>
+                                    <option>Russia</option>
+                                    <option>Ukraine</option>
+                                    <option selected="">United States</option>
+                                    <option>India</option>
+                                    <option>Canada</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Create password</label>
+                            <input class="form-control" type="password">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Register </button>
+                        </div>
+                        <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br>
+                            Terms of use and Privacy Policy.</small>
+                    </form>
+                </article>
+                <div class="border-top card-body text-center">Have an account? <a class="close"
+                        data-target="#loginModal" data-toggle="modal" data-dismiss="modal">Log In</a></div>
+            </div>
+        </div>
+
+    </div>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail"
+                                        placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword"
+                                        placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                    data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            </div>
+                            <div class="border-top card-body text-center">Doesn't have an account? <a class="close"
+                                    type="button" data-target="#signupModal" data-toggle="modal"
+                                    data-dismiss="modal">Sign Up!</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- build:js js/main.js -->
+<!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<!-- endbuild -->
+</html>
