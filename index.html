@@ -18,6 +18,8 @@
 
     <script src="https://kit.fontawesome.com/dbfd4d875c.js" crossorigin="anonymous"></script>
     <script>src = "node_modules/jquery/dist/jquery.min.js"</script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+
     <title>Search Your Pet AID</title>
 </head>
 
@@ -25,19 +27,9 @@
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row row-content">
-                <div class="col col-sm-2 col-md-2 align-self-center">
-                    <img src="img/fpindCat.png" class="img-fluid" />
-                </div>
-                <div class="col">
+                <div class="col-md-8">
                     <h1 class="text-left">Find your pet</h1>
-                    <h2 class="text-white font-weight-normal home-5-title mb-0">One solution for many problems</h2>
-                    <div class="row">
-                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success grid" id="loginButton">Log In</button>
-                        <button class="btn mx-auto mt-3 col-sm-4 btn-outline-success" id="signupButton">Sign Up</button>
-                    </div>
-                </div>
-                <div class="col col-sm-2 col-md-2 align-self-center">
-                    <img src="img/lostDog.png" class="img-fluid" />
+                    <h2 class="text-white font-weight-normal home-5-title mb-0">One solution for all problems</h2>
                 </div>
             </div>
         </div>
@@ -179,38 +171,34 @@
                         Useful information</a></li>
                 </ul>
             </div>
+            <div class="btn-group">
+                <button class="btn mx-2 mt-3 col-sm-6 btn-outline-light rounded-pill" type="button" id="loginButton">Log In</button>
+                <button class="btn mx-2 mt-3 col-sm-6 btn-outline-light rounded-pill" type="button" id="signupButton">Sign Up</button>
+            </div>
         </div>
     </nav>
 
 
     <div class="container_new">
         <div class="row">
-            <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated"
-                data-wow-duration="300ms"
-                style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
+            <div class="col-md-3 col-sm-6 bottom-margin text-center sm-margin-bottom-ten">
                 <i class="fa fa-dog medium-icon"></i>
-                <span id="anim-number-pizza" class="counter-number"></span>
-                <span class="timer counter alt-font appear" data-to="980" data-speed="7000">2800</span>
+                <span class="counter">2800</span>
                 <p class="counter-title">Lost Animals registered on the site</p>
             </div>
-            <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated"
-                data-wow-duration="600ms"
-                style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
+            <div class="col-md-3 col-sm-6 bottom-margin text-center sm-margin-bottom-ten">
                 <i class="fa fa-heart medium-icon"></i>
-                <span class="timer counter alt-font appear" data-to="980" data-speed="7000">980</span>
-                <span class="counter-title">Happy Animals found their owners</span>
+                <span class="counter">800</span>
+                <p class="counter-title">Happy Animals found their owners</p>
             </div>
-            <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten animated"
-                data-wow-duration="900ms"
-                style="visibility: visible; animation-duration: 900ms; animation-name: fadeInUp;">
+            <div class="col-md-3 col-sm-6 bottom-margin-small text-center xs-margin-bottom-ten">
                 <i class="fa fa-person medium-icon"></i>
-                <span class="timer counter alt-font appear" data-to="810" data-speed="7000">810</span>
+                <span class="counter">810</span>
                 <span class="counter-title">Registered volunteers ready to help</span>
             </div>
-            <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated" data-wow-duration="1200ms"
-                style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
+            <div class="col-md-3 col-sm-6 text-center">
                 <i class="fa fa-home medium-icon"></i>
-                <span class="timer counter alt-font appear" data-to="600" data-speed="7000">600</span>
+                <span class="counter">600</span>
                 <span class="counter-title">Animals waiting for new home</span>
             </div>
         </div>
@@ -306,14 +294,15 @@
         </div>
     </div>
 
-
 </body>
 <!-- build:js js/main.js -->
 <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <script src="js/scripts.js"></script>
+
 <!-- endbuild -->
 </html>
 
